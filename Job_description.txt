@@ -1,0 +1,8 @@
+We are hiring a Software Developer.
+
+Required Skills:
+Python
+SQL
+Git
+AWS
+Docker

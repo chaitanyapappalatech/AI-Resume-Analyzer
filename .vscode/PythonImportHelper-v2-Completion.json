@@ -1,0 +1,73 @@
+[
+    {
+        "label": "PdfReader",
+        "importPath": "PyPDF2",
+        "description": "PyPDF2",
+        "isExtraImport": true,
+        "detail": "PyPDF2",
+        "documentation": {}
+    },
+    {
+        "label": "reader",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "reader = PdfReader(\"resume.pdf.pdf\")\ntext = \"\"\nfor page in reader.pages:\n    text += page.extract_text()\nprint(text)\nskills = [\n    \"python\",\n    \"sql\",\n    \"git\",\n    \"aws\",",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "text = \"\"\nfor page in reader.pages:\n    text += page.extract_text()\nprint(text)\nskills = [\n    \"python\",\n    \"sql\",\n    \"git\",\n    \"aws\",\n    \"docker\",",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "skills",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "skills = [\n    \"python\",\n    \"sql\",\n    \"git\",\n    \"aws\",\n    \"docker\",\n    \"html\",\n    \"css\",\n    \"javascript\"\n]",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "resume_skills",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "resume_skills = []\nfor skill in skills:\n    if skill in text.lower():\n        resume_skills.append(skill)\nprint(resume_skills)\nwith open(\"Job_description.txt\",\"r\") as file:\n    jd = file.read().lower()\n    job_skills = []\nfor skill in skills:\n    if skill in jd:",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "matched",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "matched = set(resume_skills) & set(job_skills)\nscore = (\n    len(matched) /\n    len(job_skills)\n) * 100\nprint(\"Match Score:\", score)\nmissing = set(job_skills) - set(resume_skills)\nprint(\"Missing Skills:\")\nfor skill in missing:\n    print(skill)",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "score",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "score = (\n    len(matched) /\n    len(job_skills)\n) * 100\nprint(\"Match Score:\", score)\nmissing = set(job_skills) - set(resume_skills)\nprint(\"Missing Skills:\")\nfor skill in missing:\n    print(skill)\nprint(\"\\nSuggestions:\")",
+        "detail": "Main",
+        "documentation": {}
+    },
+    {
+        "label": "missing",
+        "kind": 5,
+        "importPath": "Main",
+        "description": "Main",
+        "peekOfCode": "missing = set(job_skills) - set(resume_skills)\nprint(\"Missing Skills:\")\nfor skill in missing:\n    print(skill)\nprint(\"\\nSuggestions:\")\nfor skill in missing:\n    print(\n        f\"Learn {skill} to improve your resume.\"\n    )",
+        "detail": "Main",
+        "documentation": {}
+    }
+]
