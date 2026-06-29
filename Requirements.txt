@@ -1,0 +1,54 @@
+Essential Requirements
+
+1. Resume Upload
+Upload PDF resume
+(Optional) Support DOCX files
+
+2. Resume Text Extraction
+Read the uploaded resume
+Extract all text automatically
+
+3. Skill Extraction
+Detect common technical skills such as:
+Python
+SQL
+Java
+HTML
+CSS
+JavaScript
+Git
+Flask
+MySQL
+
+4. Job Description Input
+Allow the user to:
+Paste a job description, or
+Upload a job description text file
+
+
+5. Resume–Job Matching
+Compare the resume with the job description.
+Example:
+Resume Match Score: 85%
+
+6. Missing Skills
+Show skills that are required but not found.
+Example:
+Missing Skills:
+- AWS
+- Docker
+- REST API
+
+
+7. Improvement Suggestions
+Provide suggestions such as:
+Add Git projects.
+Learn Docker.
+Include measurable project achievements.
+
+8. Simple Dashboard
+Display:
+Match Score
+Skills Found
+Missing Skills
+Suggestions
