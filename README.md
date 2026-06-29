@@ -1,28 +1,30 @@
-<h1 align="center">🗂️ Employee Management System</h1>
+<h1 align="center">🤖 AI Resume Analyzer</h1>
 
 <p align="center">
-  A professional console-based CRUD application built with <b>Python + MySQL</b><br/>
-  for managing employee records efficiently.
+  An intelligent Python tool that reads your resume, compares it with a job description,<br/>
+  calculates a <b>match score</b>, identifies <b>missing skills</b>, and gives <b>personalized recommendations</b>.
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/MySQL-phpMyAdmin-F29111?style=for-the-badge&logo=mysql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/VS%20Code-Editor-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PyPDF2-PDF%20Reader-red?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/NLTK-NLP-green?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Made%20with-❤️-ff69b4?style=for-the-badge"/>
 </p>
 
 ---
 
 ## 📚 Table of Contents
 
-- [About](#-about)
+- [What This Project Does](#-what-this-project-does)
+- [Live Output Example](#-live-output-example)
 - [Features](#-features)
 - [Technology Stack](#-technology-stack)
 - [Project Structure](#-project-structure)
-- [Database Design](#-database-design)
 - [Installation](#-installation)
-- [Application Menu](#-application-menu)
+- [How to Run](#-how-to-run)
+- [How It Works](#-how-it-works)
 - [Screenshots](#-screenshots)
 - [Sample Record](#-sample-record)
 - [Learning Outcomes](#-learning-outcomes)
@@ -32,33 +34,65 @@
 
 ---
 
-## 📖 About
+## 🎯 What This Project Does
 
-The **Employee Management System** is a console-based application developed using **Python** and **MySQL**.
-It allows users to perform complete CRUD (Create, Read, Update, Delete) operations on employee records stored in a MySQL database, managed visually through **phpMyAdmin**.
+> Upload a resume → Get instant skill gap analysis and career recommendations.
 
-This project demonstrates:
-- Python Programming with modular functions
-- MySQL Database Connectivity
-- Parameterized SQL Queries (SQL Injection prevention)
-- CRUD Operations implementation
-- Input Validation and Error Handling
+| Step | What Happens |
+|------|-------------|
+| 📄 Step 1 | User provides a resume (PDF) |
+| 🔍 Step 2 | System extracts all text from the resume |
+| 🧠 Step 3 | AI identifies skills from the resume |
+| 📋 Step 4 | Compares skills against a job description |
+| 📊 Step 5 | Calculates a Match Score (%) |
+| ❌ Step 6 | Identifies Missing Skills |
+| 💡 Step 7 | Generates Personalized Recommendations |
 
-> Designed as a beginner-friendly portfolio project — suitable for software developer interviews.
+---
+
+## 💻 Live Output Example
+
+```
+========== AI Resume Analyzer ==========
+
+Resume Skills:
+  ✔ Python
+  ✔ SQL
+  ✔ Git
+  ✔ HTML
+  ✔ CSS
+
+Job Skills Required:
+  ✔ Python
+  ✔ SQL
+  ✔ Git
+  ✔ AWS
+  ✔ Docker
+
+----------------------------------------
+  Match Score     :  60%
+  Matched Skills  :  Python, SQL, Git
+  Missing Skills  :  AWS, Docker
+----------------------------------------
+
+Recommendations:
+  → Learn AWS to improve your resume.
+  → Learn Docker to improve your resume.
+
+=========================================
+```
 
 ---
 
 ## ✨ Features
 
-- ✅ Add Employee
-- ✅ View All Employees
-- ✅ Search Employee by ID
-- ✅ Update Employee Salary
-- ✅ Delete Employee
-- ✅ MySQL Database Integration
-- ✅ Parameterized SQL Queries (SQL Injection safe)
-- ✅ Input Validation & Error Handling
-- ✅ Interactive Menu-Driven Application
+- ✅ PDF Resume Reading & Text Extraction
+- ✅ Automatic Skill Identification from Resume
+- ✅ Job Description Parsing
+- ✅ Match Score Calculation (%)
+- ✅ Missing Skill Detection
+- ✅ Personalized Learning Recommendations
+- ✅ Clean Professional Console Output
 
 ---
 
@@ -66,63 +100,31 @@ This project demonstrates:
 
 | Technology | Purpose |
 |---|---|
-| Python 3.x | Programming Language |
-| MySQL | Relational Database |
-| phpMyAdmin | Visual Database Management |
-| mysql-connector-python | Python ↔ MySQL Connector |
-| VS Code | Code Editor |
-| Git & GitHub | Version Control |
+| Python 3.x | Core programming language |
+| PyPDF2 | Extract text from PDF resumes |
+| NLTK | Natural Language Processing |
+| VS Code | Code editor |
+| Git & GitHub | Version control |
 
 ---
 
 ## 📂 Project Structure
 
 ```
-Employee-Management-System/
+AI-Resume-Analyzer/
 │
-├── screenshots/
-│   ├── demo1_connection.png
-│   ├── demo2_add_employee.png
-│   ├── demo3_update.png
-│   └── demo4_menu_delete.png
+├── Screenshots/
+│   ├── Resume_Skills.png
+│   ├── Job_Skills___Match_Score.png
+│   ├── Missing_Skills.png
+│   └── Suggestions.png
 │
-├── main.py              # Core application logic
-├── database.sql         # SQL schema script
-├── requirements.txt     # Python dependencies
-└── README.md            # Project documentation
+├── Main.py                  # Core application logic
+├── resume.pdf.pdf           # Sample resume (PDF format)
+├── Job_description.txt      # Target job description
+├── Requirements.txt         # Python dependencies
+└── README.md                # Project documentation
 ```
-
----
-
-## 🗄️ Database Design
-
-**Database Name:** `employee_db`  
-**Table Name:** `employees`
-
-| Column | Data Type | Description |
-|---|---|---|
-| id | INT (PRIMARY KEY) | Unique employee identifier |
-| name | VARCHAR(50) | Employee full name |
-| department | VARCHAR(50) | Department name |
-| salary | DECIMAL(10,2) | Employee salary |
-| email | VARCHAR(100) | Employee email address |
-
-**SQL Script:**
-
-```sql
-CREATE DATABASE employee_db;
-USE employee_db;
-
-CREATE TABLE employees (
-    id         INT PRIMARY KEY,
-    name       VARCHAR(50),
-    department VARCHAR(50),
-    salary     DECIMAL(10, 2),
-    email      VARCHAR(100)
-);
-```
-
-> 💡 Run this in **phpMyAdmin** → SQL tab at `http://localhost/phpmyadmin/`
 
 ---
 
@@ -130,39 +132,79 @@ CREATE TABLE employees (
 
 **1. Clone the repository:**
 ```bash
-git clone https://github.com/chaitanyapappalatech/Employee-Management-System.git
+git clone https://github.com/chaitanyapappalatech/AI-Resume-Analyzer.git
+cd AI-Resume-Analyzer
 ```
 
-**2. Move into the project folder:**
+**2. Install required libraries:**
 ```bash
-cd Employee-Management-System
+pip install PyPDF2 nltk
 ```
 
-**3. Install the required dependency:**
+Or use the requirements file:
 ```bash
-pip install mysql-connector-python
+pip install -r Requirements.txt
 ```
 
-**4. Run the application:**
-```bash
-python main.py
-```
-
-> ⚠️ Make sure **XAMPP** is running with **Apache** and **MySQL** active before running the app.
+**3. Add your files:**
+- Place your resume as `resume.pdf` in the project folder
+- Add your target job description in `Job_description.txt`
 
 ---
 
-## 💻 Application Menu
+## ▶️ How to Run
 
+```bash
+python Main.py
 ```
-===== Employee Management System =====
-1. Add Employee
-2. View Employees
-3. Search Employee
-4. Update Employee
-5. Delete Employee
-6. Exit
-Enter Choice:
+
+---
+
+## 🧠 How It Works
+
+### Step 1 — Extract Resume Text
+```python
+from PyPDF2 import PdfReader
+
+reader = PdfReader("resume.pdf")
+text = ""
+for page in reader.pages:
+    text += page.extract_text()
+```
+
+### Step 2 — Define Skills Library
+```python
+skills = ["python", "sql", "git", "aws", "docker", "html", "css", "javascript"]
+```
+
+### Step 3 — Extract Skills from Resume
+```python
+resume_skills = [skill for skill in skills if skill in text.lower()]
+# Output: ['python', 'sql', 'git', 'html', 'css']
+```
+
+### Step 4 — Extract Skills from Job Description
+```python
+with open("Job_description.txt", "r") as file:
+    jd = file.read().lower()
+
+job_skills = [skill for skill in skills if skill in jd]
+# Output: ['python', 'sql', 'git', 'aws', 'docker']
+```
+
+### Step 5 — Calculate Match Score
+```python
+matched = set(resume_skills) & set(job_skills)
+score = (len(matched) / len(job_skills)) * 100
+# Output: Match Score: 60.0
+```
+
+### Step 6 — Find Missing Skills & Recommend
+```python
+missing = set(job_skills) - set(resume_skills)
+for skill in missing:
+    print(f"Learn {skill} to improve your resume.")
+# Output: Learn aws | Learn docker
 ```
 
 ---
@@ -170,30 +212,34 @@ Enter Choice:
 ## 📸 Screenshots
 
 ### 📄 Step 1 — Resume Skills Extracted
-> The program reads the resume PDF and extracts the candidate's skills.
+> The system reads the PDF resume and identifies skills: `python`, `sql`, `git`, `html`, `css`
 
-![Resume Skills](screenshots/Resume_Skills.png)
+![Resume Skills](Screenshots/Resume_Skills.png)
 
 ---
 
 ### 📊 Step 2 — Job Skills & Match Score
-> Job description skills are loaded and compared against resume skills. A match score is calculated.
+> Job description parsed. Skills matched. **Match Score: 60.0**
+> Resume Skills: `['python', 'sql', 'git', 'html', 'css']`
+> Job Skills: `['python', 'sql', 'git', 'aws', 'docker']`
 
-![Job Skills and Match Score](screenshots/Job_Skills___Match_Score.png)
-
----
-
-### ❌ Step 3 — Missing Skills Identified
-> Skills present in the job description but absent from the resume are listed.
-
-![Missing Skills](screenshots/Missing_Skills.png)
+![Job Skills and Match Score](Screenshots/Job_Skills___Match_Score.png)
 
 ---
 
-### 💡 Step 4 — Suggestions to Improve Resume
-> The tool suggests which skills to learn in order to improve the match score.
+### ❌ Step 3 — Missing Skills Detected
+> System identifies skills present in the job description but missing from the resume: **aws**, **docker**
 
-![Suggestions](screenshots/Suggestions.png)
+![Missing Skills](Screenshots/Missing_Skills.png)
+
+---
+
+### 💡 Step 4 — Suggestions Generated
+> Personalized recommendations printed:
+> `Learn aws to improve your resume.`
+> `Learn docker to improve your resume.`
+
+![Suggestions](Screenshots/Suggestions.png)
 
 ---
 
@@ -201,57 +247,51 @@ Enter Choice:
 
 | Field | Value |
 |---|---|
-| ID | 1 |
-| Name | Chaitanya |
-| Department | IT |
-| Salary | 50000 |
-| Email | chaitanya@gmail.com |
-
-**Full test cycle:**
-```
-Add → View → Search → Update (salary: 60000) → Delete → View (confirm removal)
-```
+| Resume Skills | python, sql, git, html, css |
+| Job Skills | python, sql, git, aws, docker |
+| Matched Skills | python, sql, git |
+| Missing Skills | aws, docker |
+| Match Score | 60% |
 
 ---
 
-## 🎯 Learning Outcomes
+## 🎓 Learning Outcomes
 
-During this project, I learned:
-
-- ✅ Connecting Python with MySQL using `mysql-connector-python`
-- ✅ Implementing CRUD Operations with SQL
-- ✅ Writing Parameterized Queries to prevent SQL Injection
-- ✅ Managing database transactions with `conn.commit()`
-- ✅ Exception Handling and Input Validation in Python
-- ✅ Modular Programming with reusable functions
-- ✅ Visual database management using phpMyAdmin
+- ✅ Reading and extracting text from PDF files using PyPDF2
+- ✅ Natural Language Processing basics with NLTK
+- ✅ Set operations in Python (intersection, difference)
+- ✅ File handling — reading job descriptions from `.txt`
+- ✅ Building a complete end-to-end Python data pipeline
+- ✅ Generating actionable output from data analysis
+- ✅ Modular and clean Python code structure
 - ✅ Version control with Git & GitHub
 
 ---
 
 ## 🚀 Future Improvements
 
-- [ ] GUI using Tkinter or PyQt5
-- [ ] Employee Login & Admin Dashboard
-- [ ] CSV Export of employee records
-- [ ] PDF Report Generation
-- [ ] Search by Department or Salary range
-- [ ] Flask Web Version
-- [ ] PostgreSQL migration with SQLAlchemy ORM
+- [ ] Support DOCX resume format
+- [ ] Web interface using Flask or Streamlit
+- [ ] AI-powered skill extraction using spaCy or OpenAI API
+- [ ] Multiple job description comparison
+- [ ] Export analysis report as PDF
+- [ ] ATS (Applicant Tracking System) score simulation
+- [ ] Resume rewrite suggestions using LLMs
 
 ---
 
 ## 📄 Resume Description
 
 ```
-Employee Management System | Python | MySQL | phpMyAdmin
+AI Resume Analyzer | Python | PyPDF2 | NLTK
 
-• Developed a console-based Employee Management System using Python and MySQL.
-• Implemented full CRUD operations (Add, View, Search, Update, Delete) for employee records.
-• Connected Python with MySQL using mysql-connector-python library.
-• Used parameterized SQL queries throughout to prevent SQL Injection attacks.
-• Designed a relational database schema and managed it visually using phpMyAdmin.
-• Built an interactive menu-driven application with input validation and exception handling.
+• Developed an AI-powered Resume Analyzer using Python that extracts skills from
+  PDF resumes, analyzes them against job descriptions, and generates a match score
+  with personalized improvement recommendations.
+
+• Implemented resume-to-job skill gap analysis using set operations and NLP,
+  providing match percentage and actionable skill suggestions to help candidates
+  improve their profiles and increase hiring chances.
 ```
 
 ---
@@ -259,7 +299,7 @@ Employee Management System | Python | MySQL | phpMyAdmin
 ## 👨‍💻 Author
 
 **Chaitanya Pappala**  
-Aspiring Software Developer | Python Developer | SQL Developer
+Aspiring Software Developer | Python Developer | AI & Data Enthusiast
 
 [![GitHub](https://img.shields.io/badge/GitHub-chaitanyapappalatech-181717?style=for-the-badge&logo=github)](https://github.com/chaitanyapappalatech)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-chaitanya--sd-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/chaitanya-sd/)
@@ -268,12 +308,12 @@ Aspiring Software Developer | Python Developer | SQL Developer
 
 ## ⭐ Support
 
-If you found this project helpful:
+If this project helped you:
 
 - ⭐ **Star** this repository
-- 🍴 **Fork** the project
-- 📢 **Share** it with others
+- 🍴 **Fork** and build on top of it
+- 📢 **Share** with others who are job hunting
 
 ---
 
-<p align="center">Made with ❤️ using Python & MySQL</p>
+<p align="center">Made with ❤️ using Python | Helping job seekers stand out 🚀</p>
