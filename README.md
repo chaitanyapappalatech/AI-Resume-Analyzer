@@ -307,13 +307,7 @@ Aspiring Software Developer | Python Developer | AI & Data Enthusiast
 ---
 
 ## ⭐ Support
+If you found this project useful, please consider giving it a ⭐ on GitHub. Your support is appreciated and motivates future improvements.
 
-If this project helped you:
 
-- ⭐ **Star** this repository
-- 🍴 **Fork** and build on top of it
-- 📢 **Share** with others who are job hunting
-
----
-
-<p align="center">Made with ❤️ using Python | Helping job seekers stand out 🚀</p>
+<p align="center">Built with Python | Designed for Learning and Career Growth 🚀</p>
