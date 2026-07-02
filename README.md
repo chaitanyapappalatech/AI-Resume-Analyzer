@@ -10,7 +10,6 @@
   <img src="https://img.shields.io/badge/PyPDF2-PDF%20Reader-red?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/NLTK-NLP-green?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Made%20with-❤️-ff69b4?style=for-the-badge"/>
 </p>
 
 ---
